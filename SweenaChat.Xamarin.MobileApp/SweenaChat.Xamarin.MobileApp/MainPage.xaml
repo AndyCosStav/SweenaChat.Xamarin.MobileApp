@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.MainPage">
+    <StackLayout Margin="10,35,10,10">
+        <Label Text="Welcome to SweenaChat"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               HeightRequest="50" />
+
+        <Label Text="Please Login"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               HeightRequest="100" />
+        
+        <Editor x:Name="UserNameLogin"
+                Placeholder="Username"
+                HeightRequest="100" />
+
+        <Editor x:Name="PasswordLogin"
+                Placeholder="Password"
+                HeightRequest="100" />
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Text="Login"
+                    />
+            <Button Grid.Column="1"
+                    Text="Register"
+                    />
+        </Grid>
+    </StackLayout>
+</ContentPage>
