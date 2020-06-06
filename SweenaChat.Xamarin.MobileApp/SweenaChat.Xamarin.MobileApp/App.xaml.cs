@@ -12,7 +12,7 @@ namespace SweenaChat.Xamarin.MobileApp
         {
             InitializeComponent();
 
-            MainPage = new Register();
+            MainPage = new Login();
         }
 
         protected override void OnStart()

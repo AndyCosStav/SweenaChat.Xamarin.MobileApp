@@ -41,13 +41,6 @@
                         <Button Text="Register" HorizontalOptions="CenterAndExpand" TextColor="White" WidthRequest="100" BackgroundColor="Blue" Clicked="RegisterUser"/>
                     </StackLayout>
 
-
-
-                    <!--<StackLayout Grid.Row="0"></StackLayout>
-                    <StackLayout Grid.Row="1"></StackLayout>
-                    <StackLayout Grid.Row="2"></StackLayout>-->
-
-
                 </Grid>
             </StackLayout>
         </ScrollView>
