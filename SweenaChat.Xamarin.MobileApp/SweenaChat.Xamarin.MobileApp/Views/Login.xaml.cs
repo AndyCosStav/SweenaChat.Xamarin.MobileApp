@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using SweenaChat.Xamarin.MobileApp.ViewModels;
+using SweenaChat.Xamarin.MobileApp.ViewModels.Token;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -35,7 +36,7 @@ namespace SweenaChat.Xamarin.MobileApp.Views
 
             HttpClient client = new HttpClient();
 
-            var uri = new Uri("http://10.2.0.0:45455/login");
+            var uri = new Uri("http://myapi/login");
 
             var content = JsonConvert.SerializeObject(model);
 
@@ -47,18 +48,27 @@ namespace SweenaChat.Xamarin.MobileApp.Views
 
             if (response.IsSuccessStatusCode)
             {
-                var token = response.Content.ReadAsStringAsync().Result;
+                var tokenResponse = response.Content.ReadAsStringAsync().Result;
 
-                await SecureStorage.SetAsync("token", token);
+                var token = JsonConvert.DeserializeObject<AuthTokenModel>(tokenResponse);
 
-                await SecureStorage.SetAsync("user", LoginEmail.Text);
+                await SecureStorage.SetAsync("token", token.Token);
+
+                await SecureStorage.SetAsync("currentUser", LoginEmail.Text);
+
+                await Navigation.PushAsync(new AllConversationsPage());
 
 
-                return token;
+                return token.Token;
             }
 
             return ("User Not found");
 
+        }
+
+        async void NavigateToRegister(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Register());
         }
     }
 }

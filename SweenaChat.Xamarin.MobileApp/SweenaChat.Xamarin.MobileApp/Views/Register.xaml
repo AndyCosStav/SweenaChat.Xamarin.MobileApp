@@ -41,6 +41,14 @@
                         <Button Text="Register" HorizontalOptions="CenterAndExpand" TextColor="White" WidthRequest="100" BackgroundColor="Blue" Clicked="RegisterUser"/>
                     </StackLayout>
 
+                    <StackLayout Grid.Row="6">
+                        <Label Text="--Already a Member?--" HorizontalOptions="CenterAndExpand" Margin="10"></Label>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="7">
+                        <Button Text="Login" HorizontalOptions="CenterAndExpand" TextColor="White" WidthRequest="100" HeightRequest="40" BackgroundColor="Black" Clicked="NavigateToLogin" FontSize="10"/>
+                    </StackLayout>
+
                 </Grid>
             </StackLayout>
         </ScrollView>

@@ -20,6 +20,14 @@
                     <StackLayout Grid.Row="2">
                         <Button Text="Login" HorizontalOptions="CenterAndExpand" TextColor="White" WidthRequest="100" BackgroundColor="Blue" Clicked="LoginUser"/>
                     </StackLayout>
+
+                    <StackLayout Grid.Row="3">
+                        <Label Text="--OR--" HorizontalOptions="CenterAndExpand" Margin="10"></Label>
+                    </StackLayout>
+
+                    <StackLayout Grid.Row="4">
+                        <Button Text="Register" HorizontalOptions="CenterAndExpand" TextColor="White" WidthRequest="100" HeightRequest="40" BackgroundColor="Black" Clicked="NavigateToRegister" FontSize="10"/>
+                    </StackLayout>
                 </Grid>
             </StackLayout>
         </ScrollView>

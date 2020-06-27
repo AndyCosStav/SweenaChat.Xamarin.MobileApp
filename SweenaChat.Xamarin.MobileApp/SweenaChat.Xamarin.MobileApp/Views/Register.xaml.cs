@@ -33,7 +33,7 @@ namespace SweenaChat.Xamarin.MobileApp.Views
             var content = JsonConvert.SerializeObject(model);
             HttpContent httpContent = new StringContent(content, Encoding.UTF8);
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            var uri = new Uri("http://10.2.0.0:45455/register");
+            var uri = new Uri("http://myapi/register");
             HttpResponseMessage response = await httpClient.PostAsync(uri, httpContent);
             if (response.IsSuccessStatusCode)
             {
@@ -43,6 +43,11 @@ namespace SweenaChat.Xamarin.MobileApp.Views
             }
 
 
+        }
+
+        async void NavigateToLogin(object sender, System.EventArgs e)
+        {
+            await Navigation.PushAsync(new Login());
         }
 
     }
